@@ -83,7 +83,7 @@ function App(props) {
 
   const [injectedProvider, setInjectedProvider] = useState();
   const [address, setAddress] = useState();
-  const [selectedNetwork, setSelectedNetwork] = useState(networkOptions[0]);
+  const [selectedNetwork, setSelectedNetwork] = useState(networkOptions[2]); //rinkeby
   const location = useLocation();
 
   const targetNetwork = NETWORKS[selectedNetwork];
@@ -289,7 +289,7 @@ function App(props) {
         <Menu.Item key="/debug">
           <Link to="/debug">Debug Contracts</Link>
         </Menu.Item>
-        <Menu.Item key="/hints">
+        {/* <Menu.Item key="/hints">
           <Link to="/hints">Hints</Link>
         </Menu.Item>
         <Menu.Item key="/exampleui">
@@ -300,7 +300,7 @@ function App(props) {
         </Menu.Item>
         <Menu.Item key="/subgraph">
           <Link to="/subgraph">Subgraph</Link>
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu>
 
       <Switch>
@@ -323,7 +323,7 @@ function App(props) {
             ""
           )}
           {/* TODO: The DEX.jsx file actually logs a bunch of the results so we think that instead of creating completely new event components (or whatever), we would figure out how to work with the txs that are happening as a result of EthersJS calling the respective functions in DEX.jsx. 😵 Lines 321-335 are an example of attempting to place emitted events on the front-page UI. It is not working though for now! */}
-          {/* <div style={{ width: 500, margin: "auto", marginTop: 64 }}>
+          <div style={{ width: 500, margin: "auto", marginTop: 64 }}>
             <div>👀 DEX Events:</div>
             <List
               dataSource={EthToTokenSwapEvents}
@@ -337,7 +337,7 @@ function App(props) {
                 );
               }}
             />
-          </div> */}
+          </div>
         </Route>
         <Route path="/Events">
           <Events

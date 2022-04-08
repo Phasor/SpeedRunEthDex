@@ -74,7 +74,7 @@ module.exports = {
     },
 
     // rinkeby: {
-    //   url: `https://rinkeby.infura.io/v3/${process.env.RINKEBY_INFURA_KEY}`,
+    //   url: `https://eth-rinkeby.gateway.pokt.network/v1/lb/6250824b30da34003985068a`,
     //   accounts: [`${process.env.RINKEBY_DEPLOYER_PRIV_KEY}`],
     // },
     // kovan: {
@@ -100,7 +100,7 @@ module.exports = {
     // },
 
     rinkeby: {
-      url: "https://rinkeby.infura.io/v3/460f40a260564ac4a4f4b3fffb032dad", // <---- YOUR INFURA ID! (or it won't work)
+      url: "https://eth-rinkeby.gateway.pokt.network/v1/lb/6250824b30da34003985068a", // <---- YOUR INFURA ID! (or it won't work)
 
       //    url: "https://speedy-nodes-nyc.moralis.io/XXXXXXXXXXXXXXXXXXXXXXX/eth/rinkeby", // <---- YOUR MORALIS ID! (not limited to infura)
 
