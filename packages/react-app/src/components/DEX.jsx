@@ -105,7 +105,7 @@ export default function Dex(props) {
 
         <Divider> Liquidity ({liquidity ? ethers.utils.formatEther(liquidity) : "none"}):</Divider>
 
-        {rowForm("deposit", "📥", async value => {
+        {rowForm("# Eth deposit", "📥", async value => {
           let valueInEther = ethers.utils.parseEther("" + value);
           let valuePlusExtra = ethers.utils.parseEther("" + value * 1.03);
           console.log("valuePlusExtra", valuePlusExtra);
@@ -121,10 +121,20 @@ export default function Dex(props) {
               }),
             );
           }
+
+          // await tx(
+          //   writeContracts[contractName].Approve(
+          //     props.address,
+          //     props.readContracts[contractName].address,
+          //     valuePlusExtra),
+          //     {
+          //     gasLimit: 200000,
+          //     });
+
           await tx(writeContracts[contractName]["deposit"]({ value: valueInEther, gasLimit: 200000 }));
         })}
 
-        {rowForm("withdraw", "📤", async value => {
+        {rowForm("# LP tokens to withdraw", "📤", async value => {
           let valueInEther = ethers.utils.parseEther("" + value);
           let withdrawTxResult = await tx(writeContracts[contractName]["withdraw"](valueInEther));
           console.log("withdrawTxResult:", withdrawTxResult);
